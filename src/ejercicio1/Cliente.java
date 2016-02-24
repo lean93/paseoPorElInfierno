@@ -1,0 +1,66 @@
+package ejercicio1;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+public class Cliente {
+
+	private double saldo;
+	private List<Paquete> compras;
+
+	public Cliente(double unSaldo) {
+		saldo = unSaldo;
+		compras = new ArrayList<Paquete>();
+	}
+
+	public void comprarPaquete(Paquete unPaquete) {
+		realizarPago(unPaquete.getPrecioPaquete(this));
+		añadirPaquete(unPaquete);
+	}
+	
+	public void realizarPago(double unMonto){
+		saldo = saldo - unMonto;
+	}
+	
+	public void añadirPaquete(Paquete unPaquete){
+		
+		compras.add(unPaquete);
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public int getCantidadDeCompras() {
+		return compras.size();
+	}
+
+	public double getTotalGastado() {
+		double total = 0;
+
+		for (Paquete p : compras) {
+			total = p.getPrecioPaquete(this);
+		}
+		return total;
+	}
+
+	public Paquete getPaqueteMasCaro(Collection<Paquete> unaListaDePaquetes) {
+
+		Paquete masCaro = new Paquete();
+		double mayor = 0;
+
+		for (Paquete unPaquete : unaListaDePaquetes) {
+
+			if (unPaquete.getPrecioPaquete(this) > mayor) {
+				masCaro = unPaquete;
+				mayor = unPaquete.getPrecioPaquete(this);
+			}
+		}
+		return masCaro;
+	}
+	
+	
+	
+
+}

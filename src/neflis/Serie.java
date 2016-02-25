@@ -1,10 +1,13 @@
 package neflis;
 
+
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class Serie extends Contenido {
 
-	private Collection<Temporada> temporadas;
+	private List<Temporada> temporadas = new ArrayList<Temporada>();
 
 	public boolean fueVistoCompletoPor(Usuario unUsuario) {
 
@@ -47,6 +50,10 @@ public class Serie extends Contenido {
 			}
 		}
 		return resultado;
+	}
+	
+	public void ultimaTemporada(){
+		
 	}
 
 }

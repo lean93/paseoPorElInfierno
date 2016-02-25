@@ -1,5 +1,6 @@
 package neflis;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -7,19 +8,44 @@ public class Usuario {
 
 	private Collection<Visto> cosasVistas;
 
-	public void loguerse() {
-		mostrarContenidoRecomendado();
+	public void loguerse(Neflis neflix) {
+		mostrarContenidoRecomendado(neflix);
 	}
 
-	private void mostrarContenidoRecomendado() {
-		mostrarSeriesNoTerminadas();
-		mostrarDestacados();
+	private void mostrarContenidoRecomendado(Neflis neflix) {
+		mostrarSeriesNoTerminadas(neflix);
+		mostrarDestacados(neflix);
 
 	}
+	
+	private void mostrarDestacados(Neflis neflix) {
 
-	private void mostrarSeriesNoTerminadas() {
-		// TODO Auto-generated method stub
+		neflix.destacadosDelMes();
+	}
 
+	private Collection<Serie> seriesVistas(){
+		
+		Collection<Serie> series= new HashSet<Serie>();
+		
+		for (Visto loQueVi : cosasVistas){
+			
+		 loQueVi.añadirSerie(series);		
+		 }
+		
+		return series;
+		
+	}
+
+	private Collection<Serie> mostrarSeriesNoTerminadas(Neflis neflix) {
+		Collection<Serie> seriesNoVistas = new ArrayList<Serie>();
+		
+	     for (Serie serie : this.seriesVistas()){
+	    	 if (! serie.fueVistoCompletoPor(this)){
+	    		 seriesNoVistas.add(serie);
+	    	 }
+	     }
+	     
+	     return seriesNoVistas;
 	}
 
 	private void mostrarDestacados() {
@@ -68,6 +94,15 @@ public class Usuario {
 		return elGenero;
 	}
 	
-	
+	public boolean sosFanDe(Actor unActor){
+		
+		boolean resultado = true;
+		
+		for (Visto algoVisto : cosasVistas){
+			resultado = resultado && algoVisto.participo(unActor);
+		}
+		
+		return resultado;
+	}
 
 }

@@ -1,5 +1,7 @@
 package neflis;
 
+import java.util.Collection;
+
 public class Pelicula extends Contenido implements Visto {
 
 	private int duracion;
@@ -23,9 +25,12 @@ public class Pelicula extends Contenido implements Visto {
 		return duracion;
 	}
 	
-	public boolean actuoElActor(Actor actor){
-		
+	public boolean participo(Actor actor){
 		return protagonistas.contains(actor);
+	}
+	
+	public void añadirSerie(Collection<Serie> series){
+		
 	}
 
 }

@@ -17,7 +17,7 @@ import java.util.Collection;
 		return protagonistas;
 	}
 	
-public boolean actuoElActor(Actor actor){
+    public boolean actuoElActor(Actor actor){
 		
 		return protagonistas.contains(actor);
 	}

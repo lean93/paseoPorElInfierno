@@ -7,5 +7,7 @@ public interface EstadoAnimico {
 	public boolean venceLaBondadDe(Demonio unDemonio, Alma unAlma);
 	
 	public void aplicarEfectoSobre(Demonio unDemonio, Alma unAlma);
+	
+	public void compruebaEstado(Demonio unDemonio);
 
 }

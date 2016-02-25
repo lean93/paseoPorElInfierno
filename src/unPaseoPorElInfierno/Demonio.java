@@ -45,7 +45,7 @@ public abstract class Demonio {
 		if (puedeCazarUnAlma(unAlma)){
 			unLugar.dejaDeHabitar(unAlma);
 			almasCapturadas.add(unAlma);
-			compruebaEstado();
+			estado.compruebaEstado(this);
 		}
 		else {
 			atormentarAlma(unAlma);
@@ -92,12 +92,6 @@ public abstract class Demonio {
 		 return total;
 	 }
 	 
-	 public void compruebaEstado(){
-		 
-		 if(almasCapturadas.size() > 20){
-			 estado = new Feliz();
-		 }
-	 }
 
 	public void cambiarEstado(EstadoAnimico unAnimo) {
 		estado = unAnimo;

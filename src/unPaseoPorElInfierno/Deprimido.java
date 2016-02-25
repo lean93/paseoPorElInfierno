@@ -16,4 +16,11 @@ public class Deprimido implements EstadoAnimico {
 
 	}
 
+	public void compruebaEstado(Demonio unDemonio) {
+
+		if (unDemonio.getAlmasCapturadas().size() > 20) {
+		 unDemonio.cambiarEstado(new Feliz());
+		}
+	}
+
 }

@@ -1,5 +1,13 @@
 package unPaseoPorElInfierno;
 
+/**
+ * Representacion espiritual de los seres que habitan este mundo. Presa de los demonios, en donde 
+ * la forma de salvarse es que dicha alma sea fuerte en bondad y valor.. solo asi podra vencer a los 
+ * demonios y sufrir lo menos posible
+ * 
+ * @author leandrorodriguez
+ *
+ */
 public class Alma {
 
 	private int bondad;

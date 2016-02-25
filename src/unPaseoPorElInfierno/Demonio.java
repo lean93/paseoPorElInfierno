@@ -3,6 +3,18 @@ package unPaseoPorElInfierno;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+
+ * Un ser que tiene la capacidad y el deber de capturar almas o en su defecto, de atormentarlas. 
+ * Estos pueden ser de distintos tipos y varian sus habilidades segun que tipo de demonio sea.
+ * Fiel servidor del rey de las tinieblas, y brinda sus almasCapturadas para que el poder del 
+ * diablo sea cada vez mayor. 
+ * como todo ser viviente (o no) estas criaturas tienen sentimientos, estados de animo, y esto puede
+ * influir en su conducta y en se desempeño para capturar las almas 
+ * 
+ * @author leandrorodriguez
+ *
+ */
 public abstract class Demonio {
 	
 	public Demonio(int unNivelMaldad){

@@ -1,5 +1,12 @@
 package unPaseoPorElInfierno;
 
+/**
+ * Jefe maximo de las tinieblas... tiene el poder para dar ordenes a demonios, para atormentar lugares,
+ * realizar misiones y aumentar su nivel de poder segun las almas capturadas de sus lacayos demoniacos
+ * 
+ * @author leandrorodriguez
+ *
+ */
 public class Diablo {
 	
 	private double poder = 0;

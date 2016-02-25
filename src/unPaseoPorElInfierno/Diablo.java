@@ -49,6 +49,8 @@ public class Diablo {
 			minimoEntregado = unDemonio.poderParaEntregar();
 			pequeñoDemonio = unDemonio;
 		}
+		
+		unDemonio.teQuedasSinAlmas();
 	}
 
 	public Demonio elPequeñoDemonio(){

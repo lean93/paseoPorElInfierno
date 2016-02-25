@@ -14,8 +14,10 @@ public class Hielo extends Demonio {
 	}
 
 	public void efectoEspecial(Alma unAlma) {
-
 		unAlma.setEsFriolenta(true);
 	}
 
+	public void aplicarEfectoSobre(Demonio unDemonio, Alma unAlma){
+		
+	}
 }

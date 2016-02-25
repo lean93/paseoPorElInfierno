@@ -44,8 +44,14 @@ public abstract class Demonio {
 	protected void atormentarAlma(Alma unAlma){
 		
 		unAlma.reducirBondad(5);
-		efectoEspecial(unAlma);
+		aplicarEfectoEspecial(unAlma);
 		aumentarMaldad(1);
+	}
+	
+	public void aplicarEfectoEspecial(Alma unAlma){
+		
+		estado.aplicarEfectoSobre(this, unAlma);
+		 
 	}
 	
 	protected void aumentarMaldad(int unaCantidad){
@@ -83,6 +89,11 @@ public abstract class Demonio {
 
 	public void cambiarEstado(EstadoAnimico unAnimo) {
 		estado = unAnimo;
+		
+	}
+
+	public void teQuedasSinAlmas() {
+		almasCapturadas = new ArrayList<Alma>();
 		
 	}
 }

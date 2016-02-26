@@ -15,12 +15,23 @@ public class Cliente {
 	}
 
 	public void comprarPaquete(Paquete unPaquete) {
+		
+		try{
 		realizarPago(unPaquete.getPrecioPaquete(this));
 		añadirPaquete(unPaquete);
+		
+		} catch(SinSaldoException e){
+			System.out.println(e.getMessage() );
+		} finally{
+			System.out.println("saldo del Cliente: " + getSaldo() );
+		}
 	}
 	
-	public void realizarPago(double unMonto){
-		saldo = saldo - unMonto;
+	public void realizarPago(double unMonto) throws SinSaldoException{
+		if (saldo > unMonto){
+			saldo = saldo - unMonto;
+		} else {throw new SinSaldoException("Te quedaste sin saldo pibe !!");}
+		
 	}
 	
 	public void añadirPaquete(Paquete unPaquete){

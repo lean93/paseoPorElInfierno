@@ -9,13 +9,13 @@ public class Individuo extends Cliente {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void reservarPaquete(Paquete unPaquete){
+	public void reservarPaquete(Paquete unPaquete) throws SinSaldoException{
 		
 		realizarPago(unPaquete.getMedioPrecio(this));
 		enReserva = unPaquete;
 	}
 	
-	public void terminarCompra(){
+	public void terminarCompra() throws SinSaldoException{
 		
 		realizarPago(enReserva.getMedioPrecio(this));
 		enReserva = null;

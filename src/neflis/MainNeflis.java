@@ -76,13 +76,14 @@ public class MainNeflis {
 		
 		//5-a) actor participo en un contenido
 		
-		System.out.println(friends.actuoElActor(ross));
-		System.out.println(friends.actuoElActor(ted));
+		
+		System.out.println("actuo ross en friends : " + friends.actuoElActor(ross));
+		System.out.println("actuo ted en friends : " + friends.actuoElActor(ted));
 		
 		//5-b) usuario es fan de un actor
 		
-		System.out.println(leandro.sosFanDe(ross));
-		System.out.println(leandro.sosFanDe(ted));
+		System.out.println("usuario es fan de ross : " + leandro.sosFanDe(ross));
+		System.out.println("usuario es fan de ted : " +  leandro.sosFanDe(ted));
 		
 	
 	}

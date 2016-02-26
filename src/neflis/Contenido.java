@@ -6,7 +6,7 @@ import java.util.Collection;
  abstract class Contenido {
 
 	protected String genero;
-	protected Collection <Actor> protagonistas = new ArrayList();
+	protected Collection <Actor> protagonistas = new ArrayList<Actor>();
 	abstract boolean fueVistoCompletoPor(Usuario usuario);
 	abstract int duracionTotal();
 	

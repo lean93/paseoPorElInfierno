@@ -40,8 +40,11 @@ public class Capitulo implements Visto {
 		return serieCorrespondiente.getGenero() == genero;
 	}
 
+	public boolean soloAparecioAca(Actor actor) {
+		return actoresInvitados.contains(actor)	;
+	}
 	public boolean participo(Actor actor) {
-		return actoresInvitados.contains(actor);	
+		return serieCorrespondiente.actuoElActor(actor);	
 	}
 	
 	public void añadirSerie(Collection<Serie> series){

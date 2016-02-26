@@ -45,20 +45,20 @@ public class Serie extends Contenido {
 	
 	public boolean actuoElActor(Actor actor){
 		
-		return actuoElActor(actor) || participoEnAlgunCapitulo(actor);
+		return (super.actuoElActor(actor)) || (participoEnAlgunCapitulo(actor));
 	}
 
 	private boolean participoEnAlgunCapitulo(Actor actor) {
 	
-		boolean resultado = true;
+		boolean parcial = false;
 		for (Temporada temporada : temporadas){
 			
 			for (Capitulo capitulo: temporada.getiCapitulos()){
 				
-		resultado = resultado || capitulo.participo(actor);
+				parcial = parcial || capitulo.soloAparecioAca(actor);
 			}
 		}
-		return resultado;
+		return parcial;
 	}
 	
 	public Temporada ultimaTemporada(){

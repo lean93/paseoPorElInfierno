@@ -9,10 +9,9 @@ public class Main {
 		
 		
 		System.out.println("Saldo del Cliente antes de compra:" + cliente.getSaldo());
+		
 		cliente.comprarPaquete(paquete);
-		
-		
-		
+	
 		System.out.println("compras realizadas: " + cliente.getCantidadDeCompras());
 		System.out.println("total gastado: " + cliente.getTotalGastado());
 	}

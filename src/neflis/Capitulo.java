@@ -8,6 +8,21 @@ public class Capitulo implements Visto {
 	private int numDeCapitulo;
 	private Collection<Actor> actoresInvitados;
 	private Serie serieCorrespondiente;
+	
+	public Capitulo (int unaDuracion , int numDeCap, Collection<Actor> extras){
+		
+		duracion = unaDuracion;
+		numDeCapitulo = numDeCap;
+		actoresInvitados = extras;
+	}
+	
+	public void setSerie(Serie unaSerie){
+		serieCorrespondiente = unaSerie;
+	}
+	
+	public int getNumCap(){
+		return numDeCapitulo;
+	}
 
 	public int getDuracion() {
 		return duracion;

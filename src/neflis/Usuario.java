@@ -6,10 +6,14 @@ import java.util.HashSet;
 
 public class Usuario {
 
-	private Collection<Visto> cosasVistas;
+	private Collection<Visto> cosasVistas = new ArrayList<Visto>();
 
 	public void loguerse(Neflis neflix) {
 		mostrarContenidoRecomendado(neflix);
+	}
+	
+	public void acabasDeMirar(Visto algoParaVer){
+		cosasVistas.add(algoParaVer);
 	}
 
 	private void mostrarContenidoRecomendado(Neflis neflix) {
@@ -64,7 +68,7 @@ public class Usuario {
 	}
 
 	public Collection<String> generosVistos() {
-		Collection<String> generos = new HashSet();
+		Collection<String> generos = new HashSet<String>();
 		for (Visto contenidoVisto : cosasVistas) {
 			generos.add(contenidoVisto.getGenero());
 		}

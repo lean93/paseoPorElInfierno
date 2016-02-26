@@ -3,8 +3,18 @@ package neflis;
 import java.util.Collection;
 
 public class Pelicula extends Contenido implements Visto {
-
 	private int duracion;
+
+	
+	public Pelicula(int unaDuracion, Collection<Actor> unosActores, String unGenero){
+		
+		duracion = unaDuracion;
+		genero = unGenero;
+		protagonistas = unosActores;
+		
+	}
+
+	
 
 	public boolean fueVistoCompletoPor(Usuario unUsario) {
 

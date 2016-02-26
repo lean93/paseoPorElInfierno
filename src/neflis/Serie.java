@@ -6,9 +6,18 @@ import java.util.Collection;
 import java.util.List;
 
 public class Serie extends Contenido {
+	
+	public Serie (String unGenero, Collection<Actor> unosActores, List<Temporada> lasTemporadas){
+		
+		genero = unGenero;
+		protagonistas = unosActores;
+		temporadas = lasTemporadas;
+		
+	}
 
 	private List<Temporada> temporadas = new ArrayList<Temporada>();
 
+	
 	public boolean fueVistoCompletoPor(Usuario unUsuario) {
 
 		boolean resultado = true;
@@ -52,8 +61,18 @@ public class Serie extends Contenido {
 		return resultado;
 	}
 	
-	public void ultimaTemporada(){
+	public Temporada ultimaTemporada(){
 		
+		return temporadas.get(temporadas.size() -1);
+		
+	}
+	
+	public Capitulo capituloFinal(){
+		return ultimaTemporada().ultimoCapitulo();
+	}
+	
+	public void cargarCapitulo(Capitulo unCapitulo){
+		ultimaTemporada().añadirCapitulo(unCapitulo);
 	}
 
 }

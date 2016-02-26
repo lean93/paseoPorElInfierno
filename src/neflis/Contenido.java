@@ -1,13 +1,16 @@
 package neflis;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
  abstract class Contenido {
 
-	private String genero;
-	protected Collection <Actor> protagonistas;
+	protected String genero;
+	protected Collection <Actor> protagonistas = new ArrayList();
 	abstract boolean fueVistoCompletoPor(Usuario usuario);
 	abstract int duracionTotal();
+	
+
 	
 	public String getGenero(){
 		return genero;
